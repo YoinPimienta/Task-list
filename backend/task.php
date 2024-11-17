@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-require 'db.php'; // Conexión a la base de datos
+require 'db.php'; 
 
 $method = $_SERVER['REQUEST_METHOD'];
 

@@ -2,10 +2,8 @@ const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
 
-// Ruta base para interactuar con el backend
 const API_URL = './backend/task.php';
 
-// Cargar tareas al iniciar
 async function loadTasks() {
   try {
     const res = await fetch(API_URL);
@@ -22,7 +20,6 @@ async function loadTasks() {
   }
 }
 
-// Agregar tarea
 taskForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const taskText = taskInput.value.trim();
@@ -45,7 +42,6 @@ taskForm.addEventListener('submit', async (e) => {
   }
 });
 
-// Eliminar tarea
 taskList.addEventListener('click', async (e) => {
   if (e.target.classList.contains('delete-btn')) {
     const id = e.target.dataset.id;
@@ -60,5 +56,4 @@ taskList.addEventListener('click', async (e) => {
   }
 });
 
-// Inicializar
 loadTasks();
